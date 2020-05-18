@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Perfect Life</title>
+	<link href="icon.ico" rel="shortcut icon" type="image/x-icon">
+
+
+	<style>
+
+		html, body{margin: 0; padding: 0; height: 100%}
+
+		.left
+		{
+
+			float: left;
+
+			width: 50%;
+
+			height: 100%;
+
+		}
+
+		.right
+		{
+			float: left;
+
+			
+			width: 50%;
+
+			height: 100%;
+
+		}
+
+
+
+		body
+		{
+			background-color: rgb(60,204,254);
+			background-image: url('L.png'), url('Letter.png');
+			background-repeat: no-repeat;
+			background-size: 730px;
+			background-position: center;
+		}
+
+
+
+	</style>
+
+
+	<script>
+		function changeBg(bimg)
+		{
+			var body=document.getElementsByTagName("body");
+			body[0].style.backgroundImage="url(" + bimg + "), url('Letter.png')";
+		}
+
+	</script>
+
+
+
+</head>
+<body>
+	<div class="left" onmouseover="changeBg('L.png')"></div>
+
+	<div class="right" onmouseover="changeBg('R.png')"></div>
+
+
+	<div align="center">
+	<audio controls autoplay loop> <source src="music.mp3" type="audio/mp3"></audio>
+	<p>Songwriter: Nayutan hoshibito</p>
+	</div>
+
+</body>
+</html>

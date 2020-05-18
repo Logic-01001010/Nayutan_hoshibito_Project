@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Alien Alien</title>
+	<link href="icon.ico" rel="shortcut icon" type="image/x-icon">
+
+	<?php
+		date_default_timezone_set('Asia/Seoul');
+		$myfile = fopen("Visits.txt", "a+") or die("Unable to open file!");
+
+		fwrite($myfile, date("Y년 n월 j일 h시 i분 s초 (요일 : D)"));
+		fwrite($myfile, "\n");
+		fwrite($myfile, $_SERVER['REMOTE_ADDR']);
+		fwrite($myfile, "\n\n");
+		fclose($myfile);
+	?>
+
+
+	<style>
+
+		html, body{margin: 0; padding: 0; height: 100%}
+
+		.left
+		{
+
+			float: left;
+
+			width: 50%;
+
+			height: 100%;
+
+		}
+
+		.right
+		{
+			float: left;
+
+			
+			width: 50%;
+
+			height: 100%;
+
+		}
+
+
+
+		body
+		{
+			background-color: rgb(254,84,85);
+			background-image: url('L.png'), url('Letter.png');
+			background-repeat: no-repeat;
+			background-size: 730px;
+			background-position: center;
+		}
+
+
+
+	</style>
+
+
+
+
+
+	<script>
+		function changeBg(bimg)
+		{
+			var body=document.getElementsByTagName("body");
+			body[0].style.backgroundImage="url(" + bimg + "), url('Letter.png')";
+		}
+
+	</script>
+
+
+
+</head>
+<body>
+	<div class="left" onmouseover="changeBg('L.png')"></div>
+
+	<div class="right" onmouseover="changeBg('R.png')"></div>
+
+
+	<div align="center">
+	<audio controls autoplay loop> <source src="music.mp3" type="audio/mp3"></audio>
+	<p>Songwriter: Nayutan hoshibito</p>
+	</div>
+
+</body>
+</html>
