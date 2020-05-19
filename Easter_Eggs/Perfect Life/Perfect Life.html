@@ -48,11 +48,79 @@
 
 
 	<script>
-		function changeBg(bimg)
+		var toggle	= 0;
+
+		function changeBgL()
 		{
 			var body=document.getElementsByTagName("body");
-			body[0].style.backgroundImage="url(" + bimg + "), url('Letter.png')";
+
+			if(toggle==0)
+			{
+			body[0].style.backgroundImage="url(" + 'LG.png' + "), url('Letter.png')";
+			}
+
+			else if(toggle==1)
+			{
+			body[0].style.backgroundImage="url(" + 'L.png' + "), url('Letter.png')"
+			}
 		}
+
+
+		function changeBgR()
+		{
+			var body=document.getElementsByTagName("body");
+		
+			if(toggle==0)
+			{
+			body[0].style.backgroundImage="url(" + 'RG.png' + "), url('Letter.png')";
+			}
+			else if(toggle==1)
+			{
+			body[0].style.backgroundImage="url(" + 'R.png' + "), url('Letter.png')"
+			}
+		}
+
+		function GLASS_MODEL()
+		{
+			var body=document.getElementsByTagName("body");
+
+			if(toggle==0) // 안경 쓰고 있음.
+			{
+
+				body[0].style.backgroundImage="url(" + 'OGL.png' + "), url('Letter.png')"; // 안경 벗기.
+				toggle=1;
+			}
+
+			else if(toggle==1) //  안경 벗고 있음.
+			{
+	
+				body[0].style.backgroundImage="url(" + 'WGL.png' + "), url('Letter.png')"; // 안경 쓰기.
+				toggle=0;
+			}
+
+		}
+
+
+		function GLASS_MODER()
+		{
+			var body=document.getElementsByTagName("body");
+
+			if(toggle==0) // 안경 쓰고 있음.
+			{
+	
+				body[0].style.backgroundImage="url(" + 'OGR.png' + "), url('Letter.png')"; // 안경 벗기.
+				toggle=1;
+			}
+
+			else if(toggle==1) //  안경 벗고 있음.
+			{
+
+				body[0].style.backgroundImage="url(" + 'WGR.png' + "), url('Letter.png')"; // 안경 쓰기.
+				toggle=0;
+			}
+
+		}
+
 
 	</script>
 
@@ -60,9 +128,9 @@
 
 </head>
 <body>
-	<div class="left" onmouseover="changeBg('L.png')"></div>
+	<div class="left" onmouseover="changeBgL()" onmousedown="GLASS_MODEL()" ></div>
 
-	<div class="right" onmouseover="changeBg('R.png')"></div>
+	<div class="right" onmouseover="changeBgR()" onmousedown="GLASS_MODER()" ></div>
 
 
 	<div align="center">
